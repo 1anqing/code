@@ -1,8 +1,7 @@
 include ../Make.defines
 
-PROGS = daytimetcpcli \
-		daytimetcpsrv \
-		daytimetcpcliv6
+PROGS = daytimetcpcli daytimetcpsrv \
+		daytimetcpcliv6 byteorder
 
 all:	${PROGS}
 
@@ -14,6 +13,9 @@ daytimetcpsrv:	daytimetcpsrv.o
 
 daytimetcpcliv6:	daytimetcpcliv6.o
 		${CC} ${CFLAGS} -o $@ daytimetcpcliv6.o ${LIBS}
+
+byteorder:	byteorder.o
+		${CC} ${CFLAGS} -o $@ byteorder.o ${LIBS}
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
